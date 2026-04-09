@@ -1,6 +1,6 @@
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class CustomerTest {
 
@@ -13,7 +13,7 @@ class CustomerTest {
         customer = new Customer(customerName);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addRental() {
         Rental rental = new Rental(new Movie("Test movie", 0), 3);
         customer.addRental(rental);
@@ -25,7 +25,7 @@ class CustomerTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void statement() {
         Assertions.assertTrue(customer.statement().startsWith("Rental Record for John"));
         Assertions.assertTrue(customer.statement().endsWith(" frequent renter points"));
