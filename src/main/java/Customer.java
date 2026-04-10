@@ -27,7 +27,7 @@ class Customer {
         while (enum_rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) enum_rentals.nextElement();
-            thisAmount = amountFor(each);
+            thisAmount = each.getCharge();
             frequentRenterPoints++;
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
                 frequentRenterPoints++;
@@ -39,9 +39,7 @@ class Customer {
         return result;
     }
 
-    private double amountFor(Rental aRental) {
-        return aRental.getCharge();
-    }
+
 
 }
     
